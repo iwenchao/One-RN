@@ -1,5 +1,6 @@
 package com.iwenchaos.onern
 
+import android.annotation.TargetApi
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     private fun checkAppPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!Settings.canDrawOverlays(this)) {
