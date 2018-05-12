@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
-    val OVERLAY_PERMISSION_REQ_CODE = 1000
+    private  val OVERLAY_PERMISSION_REQ_CODE = 1000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,13 +37,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        if (requestCode == OVERLAY_PERMISSION_REQ_CODE) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (!Settings.canDrawOverlays(this)) {
-                    //SYSTEM_ALERT_WINDOW被拒绝
-                }
-            }
-        }
+//        if (requestCode == OVERLAY_PERMISSION_REQ_CODE) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                if (!Settings.canDrawOverlays(this)) {
+//                    //SYSTEM_ALERT_WINDOW被拒绝
+//                }
+//            }
+//        }
     }
 
 }

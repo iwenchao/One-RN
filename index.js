@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import {
     AppRegistry,
     StyleSheet,
     Text,
     View
-} from 'react-native'
+} from 'react-native';
 
 class HelloWorld extends React.Component{
 
@@ -24,9 +24,9 @@ var styles = StyleSheet.create({
     },
     hello :{
         fontSize:20,
-        textAlign:'center'
+        textAlign:'center',
         margin:10
-    },
+    }
 });
 
 
