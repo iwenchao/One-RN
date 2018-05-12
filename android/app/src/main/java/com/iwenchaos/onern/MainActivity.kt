@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 //        if (requestCode == OVERLAY_PERMISSION_REQ_CODE) {
 //            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //                if (!Settings.canDrawOverlays(this)) {
