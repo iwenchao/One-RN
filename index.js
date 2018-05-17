@@ -11,7 +11,7 @@ class HelloWorld extends React.Component{
     render(){
         return (
             <View style={styles.container}>
-                <Text style={styles.hello}>HelloWorld React</Text>
+                <Text style={styles.hello}>火箭总冠军！！！</Text>
             </View>
         );
     }
