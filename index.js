@@ -6,7 +6,12 @@ import {
     View
 } from 'react-native';
 
-class HelloWorld extends React.Component{
+class App extends React.Component{
+
+    constructor(props){
+        super(props)
+
+    }
 
     render(){
         return (
@@ -30,4 +35,4 @@ var styles = StyleSheet.create({
 });
 
 
-AppRegistry.registerComponent('onern',()=> HelloWorld);
+AppRegistry.registerComponent('onern',()=> App);
