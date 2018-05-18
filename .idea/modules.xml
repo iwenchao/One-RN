@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/OneRN.iml" filepath="$PROJECT_DIR$/.idea/OneRN.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OneRN.iml" filepath="$PROJECT_DIR$/OneRN.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
