@@ -12,3 +12,8 @@ const styles = StyleSheet.create(
         }
     }
 );
+
+const TAB_BAR_RESO = [
+    [require('../images/home.png'),require('../images/home_active.png')],
+
+];
