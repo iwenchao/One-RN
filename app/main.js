@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-    StyleSheet, Text, View
+    StyleSheet, Text, View,
+    Navigator
 
 } from 'react-native'
 
@@ -14,13 +15,15 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 18
     }
+
 });
 
 
-class App extends React.Component {
+export class App extends React.Component {
 
     constructor(props) {
         super(props)
+        this.renderScene = this.renderScene.bind(this)
 
     }
 
@@ -43,6 +46,11 @@ class App extends React.Component {
                 <Text style={styles.test}>This is a test code </Text>
             </View>
         );
+    }
+
+    renderScene(route, navigator){
+        this.navigator = navigator;
+        registerNavigator(navigator);
     }
 
 
