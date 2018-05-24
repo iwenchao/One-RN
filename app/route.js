@@ -15,7 +15,6 @@ export function registerNavigator(tmNavigator) {
     }
     navigator = tmNavigator
 }
-
 export function getNavigator() {
     return navigator
 }

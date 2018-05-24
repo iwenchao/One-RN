@@ -2,12 +2,11 @@
 
 import React from 'react'
 import {
-    StyleSheet, Text, View,
-    Navigator
+    StyleSheet, Text, View
 
 } from 'react-native'
 import {getRouteMap} from "./route";
-
+import Orientation from './utils/orientation'
 
 const styles = StyleSheet.create({
     container: {
@@ -37,11 +36,11 @@ export default class App extends React.Component {
     constructor(props) {
         super(props)
         this.renderScene = this.renderScene.bind(this)
-
+        this.configureScene = this.configureScene.bind(this)
     }
 
     componentWillMount() {
-
+        Orientation.lockToPortrait()
     }
 
     render() {
@@ -70,9 +69,9 @@ export default class App extends React.Component {
     }
 
     //出厂动画
-    configureScene(route){
+    configureScene(route) {
         let sceneAnimation = getRouteMap().get(route.name).sceneAnimation
-        if (sceneAnimation){
+        if (sceneAnimation) {
             return sceneAnimation
         }
         return Navigator.SceneConfigs.PushFromRight
