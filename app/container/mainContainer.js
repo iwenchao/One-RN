@@ -1,7 +1,8 @@
+
+
 import React from 'react';
 import {
     StyleSheet,
-
 } from 'react-native';
 
 
@@ -17,3 +18,15 @@ const TAB_BAR_RESO = [
     [require('../images/home.png'),require('../images/home_active.png')],
 
 ];
+
+class MainContainer extends React.Component{
+
+    constructor(props){
+        super(props)
+    }
+
+
+
+}
+
+export  default MainContainer
