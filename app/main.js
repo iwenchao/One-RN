@@ -2,11 +2,12 @@
 
 import React from 'react'
 import {
-    StyleSheet, Text, View
+    StyleSheet, Text, View, Platform, BackAndroid
 
 } from 'react-native'
 import {getRouteMap} from "./route";
 import Orientation from './utils/orientation'
+import {ON_BACR_PRESSED} from "./constants/constant";
 
 const styles = StyleSheet.create({
     container: {
@@ -41,6 +42,9 @@ export default class App extends React.Component {
 
     componentWillMount() {
         Orientation.lockToPortrait()
+        if (Platform.OS === 'android') {
+            BackAndroid.addEventListener(ON_BACR_PRESSED, this.onBackPressed)
+        }
     }
 
     render() {
@@ -78,23 +82,23 @@ export default class App extends React.Component {
     }
 
 
-    componentDidMount(): void {
+    onBackPressed() {
+
+    }
+
+    componentDidMount() {
         super.componentDidMount();
+        //TODO 第三方分享
     }
 
     shouldComponentUpdate(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: any): boolean {
         return super.shouldComponentUpdate(nextProps, nextState, nextContext);
     }
 
-    componentWillUnmount(): void {
+    componentWillUnmount() {
         super.componentWillUnmount();
-    }
-
-    componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS): void {
-        super.componentDidUpdate(prevProps, prevState, snapshot);
-    }
-
-    componentWillUpdate(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: any): void {
-        super.componentWillUpdate(nextProps, nextState, nextContext);
+        if (Platform.OS === 'android') {
+            BackAndroid.removeEventListener(ON_BACR_PRESSED, this.onBackPressed)
+        }
     }
 }
