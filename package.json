@@ -12,14 +12,13 @@
     "type": "git",
     "url": "https://github.com/iwenchao/One-RN.git"
   },
-  "bugs": {
-
-  },
+  "bugs": {},
   "dependencies": {
+    "@remobile/react-native-toast": "1.0.7",
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-native": "^0.55.4",
-    "@remobile/react-native-toast": "1.0.7",
-    "react-native-scrollable-tab-view": "^0.8.0",
-    "react-native-orientation": "1.17.0"
+    "react-native-orientation": "1.17.0",
+    "react-native-scrollable-tab-view": "^0.8.0"
   }
 }
