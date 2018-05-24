@@ -5,7 +5,7 @@
  */
 import commonStyle from "../styles/commonStyle";
 import React from "react";
-import {View} from "react-native";
+import {Image, TouchableOpacity, View} from "react-native";
 import PropTypes from 'prop-types'
 
 
@@ -48,12 +48,26 @@ class TabBar extends React.Component {
             tabBarResources,
             activeTab,
             tabs,
-            gotoPage
+            goToPage
         } = this.props
 
         return (
             <View style={styles.container}>
+                {
+                    tabs.map((tab, index) => {
+                        return <TouchableOpacity
+                            style={styles.touchableContainer}
+                            key={index}
+                            onPress={() => {
+                                goToPage(index)
+                            }}
+                            activeOpacity={1}>
 
+                            <Image style={styles.image} source={tabBarResources[index][activeTab === index ? 1 : 0]}/>
+
+                        </TouchableOpacity>
+                    })
+                }
             </View>
         )
     }

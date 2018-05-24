@@ -1,8 +1,15 @@
+/**
+ * 作者：chaos
+ * 创建日期：2018-05-24 13:37
+ * 文件描述：
+ */
+
 import React from 'react';
 import {
     StyleSheet,
 } from 'react-native';
 import ScrollableTabView from "react-native-scrollable-tab-view";
+import TabBar from "../component/tabBar";
 
 
 const styles = StyleSheet.create(
@@ -33,11 +40,11 @@ class MainContainer extends React.Component {
             locked={true}
             scrollWithoutAnimation={true}
             prerenderingSiblingsNumber={4}
-            renderTabBar={()=>{
-                return <TabBar >
+            renderTabBar={() => {
+                return <TabBar tabBarSources={TAB_BAR_RESO}/>
             }
-            }
-        >
+            }>
+
 
         </ScrollableTabView>)
     }

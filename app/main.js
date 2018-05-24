@@ -6,6 +6,7 @@ import {
     Navigator
 
 } from 'react-native'
+import {getRouteMap} from "./route";
 
 
 const styles = StyleSheet.create({
@@ -16,27 +17,28 @@ const styles = StyleSheet.create({
         margin: 10,
         textAlign: 'center',
         fontSize: 18
+    },
+    errorView: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white'
+    },
+    errorText: {
+        color: 'red',
+        fontSize: 16
     }
 
 });
 
 
-export class App extends React.Component {
+export default class App extends React.Component {
 
     constructor(props) {
         super(props)
         this.renderScene = this.renderScene.bind(this)
 
     }
-
-    getDefaultProps() {
-
-    }
-
-    getInitailState() {
-
-    }
-
 
     componentWillMount() {
 
@@ -50,9 +52,30 @@ export class App extends React.Component {
         );
     }
 
-    renderScene(route, navigator){
+    renderScene(route, navigator) {
         this.navigator = navigator;
         registerNavigator(navigator);
+
+        let Component = getRouteMap().get(route.name).component
+        if (!Component) {
+            return (
+                <View style={styles.errorView}>
+                    <Text style={styles.errorText}>您所启动的Component未在router中注册</Text>
+                </View>
+            )
+        }
+        return (
+            <Component {...route}/>
+        )
+    }
+
+    //出厂动画
+    configureScene(route){
+        let sceneAnimation = getRouteMap().get(route.name).sceneAnimation
+        if (sceneAnimation){
+            return sceneAnimation
+        }
+        return Navigator.SceneConfigs.PushFromRight
     }
 
 
