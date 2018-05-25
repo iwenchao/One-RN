@@ -35,18 +35,19 @@ class MainContainer extends React.Component {
     }
 
     render() {
-        return (<ScrollableTabView
-            tabBarPosition="bottom"
-            locked={true}
-            scrollWithoutAnimation={true}
-            prerenderingSiblingsNumber={4}
-            renderTabBar={() => {
-                return <TabBar tabBarSources={TAB_BAR_RESO}/>
-            }
-            }>
+        return (
+            <ScrollableTabView
+                tabBarPosition="bottom"
+                locked={true}
+                scrollWithoutAnimation={true}
+                prerenderingSiblingsNumber={4}
+                renderTabBar={() => {
+                    return <TabBar tabBarSources={TAB_BAR_RESO}/>
+                }
+                }>
 
 
-        </ScrollableTabView>)
+            </ScrollableTabView>)
     }
 
 

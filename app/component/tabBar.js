@@ -5,7 +5,7 @@
  */
 import commonStyle from "../styles/commonStyle";
 import React from "react";
-import {Image, TouchableOpacity, View} from "react-native";
+import {Image, TouchableOpacity, View, StyleSheet} from "react-native";
 import PropTypes from 'prop-types'
 
 

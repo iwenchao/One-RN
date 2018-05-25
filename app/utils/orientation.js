@@ -4,13 +4,12 @@
  * 文件描述：
  */
 
-import {Platform, NativeModules} from 'react-native'
+import {Platform} from 'react-native'
 import OrientationIOS from 'react-native-orientation'
+import OrientationAndroid from 'react-native-orientation'
 
-const {Orientation: OrientationAndroid} = NativeModules
 
-
-let Orientation
+let Orientation;
 if (Platform.OS === 'ios') {
     Orientation = OrientationIOS
 } else {

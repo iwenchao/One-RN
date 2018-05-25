@@ -6,7 +6,8 @@
 
 import React from "react";
 import {getNavigator} from "../route";
-import {TouchableOpacity, Dimensions, Image} from "react-native";
+import {TouchableOpacity, Dimensions, Image, StyleSheet} from "react-native";
+import PropTypes from 'prop-types'
 
 const windowHeight = Dimensions.get('window').height
 const windowWidth = Dimensions.get('window').width
