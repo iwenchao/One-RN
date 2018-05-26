@@ -6,7 +6,7 @@
 
 import React from "react";
 import PropTypes from 'prop-types'
-import {TouchableOpacity, View} from "react-native";
+import {Image, Text, TouchableOpacity, View} from "react-native";
 
 
 LoadingErrorView.propTypes = {
@@ -39,11 +39,14 @@ class LoadingErrorView extends React.Component {
         super(props);
     }
 
-    render(){
+    render() {
         return (
-            <TouchableOpacity activeOpacity={1}>
-                <View>
-
+            <TouchableOpacity activeOpacity={1} style={[styles.container, this.props.containerStyle]}
+                              onPress={this.props.onPress}>
+                <View style={[styles.container, this.props.containerStyle]}>
+                    <Image style={[styles.container]} resizeMode={'contain'}
+                           source={require('../images/loading_error_image.png')}/>
+                    <Text style={styles.text}>加载失败，请点击重试</Text>
                 </View>
             </TouchableOpacity>
         )
