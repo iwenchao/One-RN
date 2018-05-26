@@ -7,6 +7,7 @@ import BaseComponent from "../component/BaseComponent";
 import {getNavigator} from "../route";
 import Toast from '../utils/toast.android'
 import appearTime from "../constants/appearTime";
+import LoadingManagerView from '../component/loadingManagerView'
 
 class PicContainer extends BaseComponent {
 
@@ -30,9 +31,12 @@ class PicContainer extends BaseComponent {
     }
 
     fetchData() {
+        //加载中
         this.state({
-            loadingState:LoadingManagerView.loading
+            loadingState:LoadingManagerView.Loading
         })
+        //去下载数据
+        
     }
 
     renderBody() {

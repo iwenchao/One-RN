@@ -66,3 +66,5 @@ class LoadingManagerView extends React.Component {
 
     }
 }
+
+export default LoadingManagerView
