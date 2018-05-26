@@ -5,4 +5,4 @@
  */
 
 
-export var ON_BACR_PRESSED = 'onBackPressed'
+export var ON_BACK_PRESSED = 'onBackPressed'

@@ -8,12 +8,19 @@ import {getNavigator} from "../route";
 import Toast from '../utils/toast.android'
 import appearTime from "../constants/appearTime";
 import LoadingManagerView from '../component/loadingManagerView'
+import {getLastestPictureList} from "../api/pictureApi";
 
 class PicContainer extends BaseComponent {
 
     // 构造
     constructor(props) {
         super(props);
+        this.fetchData = this.fetchData.bind(this)
+        this.renderPage = this.renderPage.bind(this)
+        this.onBeyondRange = this.onBeyondRange.bind(this)
+        this.state = {
+            dataSource : new ViewPagerAndroid.DataSource()
+        }
 
     }
 
@@ -36,7 +43,11 @@ class PicContainer extends BaseComponent {
             loadingState:LoadingManagerView.Loading
         })
         //去下载数据
-        
+        getLastestPictureList().then(idlist =>{
+            this.setState({
+                dataSource : this.state.dataSource.cl
+            })
+        })
     }
 
     renderBody() {

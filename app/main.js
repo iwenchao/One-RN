@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 import {getRouteMap, registerNavigator} from "./route";
 // import OrientationAndroid from './utils/orientation'
-import {ON_BACR_PRESSED} from "./constants/constant";
+import {ON_BACK_PRESSED} from "./constants/constant";
 import {Navigator} from "react-native-deprecated-custom-components";
 
 const styles = StyleSheet.create({
@@ -43,7 +43,7 @@ export default class App extends React.Component {
     componentWillMount() {
         // OrientationAndroid.lockToPortrait();
         if (Platform.OS === 'android') {
-            BackAndroid.addEventListener(ON_BACR_PRESSED, this.onBackPressed)
+            BackAndroid.addEventListener(ON_BACK_PRESSED, this.onBackPressed)
         }
     }
 
@@ -103,7 +103,7 @@ export default class App extends React.Component {
     componentWillUnmount() {
         super.componentWillUnmount();
         if (Platform.OS === 'android') {
-            BackAndroid.removeEventListener(ON_BACR_PRESSED, this.onBackPressed)
+            BackAndroid.removeEventListener(ON_BACK_PRESSED, this.onBackPressed)
         }
     }
 }
