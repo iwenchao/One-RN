@@ -52,3 +52,5 @@ class LoadingErrorView extends React.Component {
         )
     }
 }
+
+export default LoadingErrorView
