@@ -6,13 +6,8 @@
 
 import React from "react";
 import PropTypes from 'prop-types'
-import {Image, Text, TouchableOpacity, View} from "react-native";
+import {Image, Text, TouchableOpacity, View,StyleSheet} from "react-native";
 
-
-LoadingErrorView.propTypes = {
-    onPress: PropTypes.func,
-    containerStyle: PropTypes.object
-}
 
 
 const styles = StyleSheet.create({
@@ -51,6 +46,11 @@ class LoadingErrorView extends React.Component {
             </TouchableOpacity>
         )
     }
+}
+
+LoadingErrorView.propTypes = {
+    onPress: PropTypes.func,
+    containerStyle: PropTypes.object
 }
 
 export default LoadingErrorView

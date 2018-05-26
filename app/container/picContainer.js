@@ -3,12 +3,17 @@
  * 创建日期：2018-05-25 15:32
  * 文件描述：
  */
+import {
+    InteractionManager
+} from 'react-native'
 import BaseComponent from "../component/BaseComponent";
 import {getNavigator} from "../route";
 import Toast from '../utils/toast.android'
 import appearTime from "../constants/appearTime";
 import LoadingManagerView from '../component/loadingManagerView'
 import {getLastestPictureList} from "../api/pictureApi";
+import ViewPager from "react-native-viewpager";
+import React from "react";
 
 class PicContainer extends BaseComponent {
 
@@ -19,7 +24,10 @@ class PicContainer extends BaseComponent {
         this.renderPage = this.renderPage.bind(this)
         this.onBeyondRange = this.onBeyondRange.bind(this)
         this.state = {
-            dataSource : new ViewPagerAndroid.DataSource()
+            dataSource: new ViewPager.DataSource({
+                pageHasChanged: (p1, p2) => p1 != p2,
+            }),
+            loadingStatus: LoadingManagerView.Loading
         }
 
     }
@@ -34,24 +42,44 @@ class PicContainer extends BaseComponent {
     }
 
     componentDidMount() {
-
+        //InteractionManager??
+        InteractionManager.runAfterInteractions(this.fetchData)
     }
 
     fetchData() {
         //加载中
         this.state({
-            loadingState:LoadingManagerView.Loading
+            loadingState: LoadingManagerView.Loading
         })
         //去下载数据
-        getLastestPictureList().then(idlist =>{
+        getLastestPictureList().then(idlist => {
             this.setState({
-                dataSource : this.state.dataSource.cl
+                dataSource: this.state.dataSource.cloneWithPages(idlist),
+                loadingStatus: LoadingManagerView.LoadingOK
+            })
+        }).catch(() => {
+            this.setState({
+                loadingStatus: LoadingManagerView.LoadingError
             })
         })
     }
 
     renderBody() {
-
+        const {loadingStatus, dataSource} = this.state
+        if (loadingStatus === LoadingManagerView.LoadingOK) {
+            return (
+                <ViewPager
+                    style={{flex: 1}}
+                    onBeyondRange={this.onBeyondRange}
+                    dataSource={dataSource}
+                    renderPage={this.renderPage}
+                    renderPageIndicator={false}
+                />
+            )
+        }
+        return (
+            <LoadingManagerView status={loadingStatus} onFetchData={this.fetchData}/>
+        )
     }
 
 

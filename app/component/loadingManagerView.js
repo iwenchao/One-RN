@@ -8,18 +8,8 @@ import React from "react";
 import PropTypes from 'prop-types'
 import LoadingView from './loadingView'
 import LoadingErrorView from './loadingErrorView'
-import {Text, View} from "react-native";
+import {Text, View,StyleSheet} from "react-native";
 
-LoadingManagerView.Loading = 'Loading'
-LoadingManagerView.LoadingError = 'LoadingError'
-LoadingManagerView.LoadingOK = 'LoadingOK'
-
-LoadingManagerView.propTypes = {
-    onFetchData: PropTypes.func,
-    status: PropTypes.oneOf([LoadingManagerView.Loading, LoadingManagerView.LoadingError, LoadingManagerView.LoadingOK]).isRequired,
-    containerStyle: PropTypes.object
-
-}
 
 const styles = StyleSheet.create({
     container: {
@@ -67,4 +57,14 @@ class LoadingManagerView extends React.Component {
     }
 }
 
+LoadingManagerView.Loading = 'Loading'
+LoadingManagerView.LoadingError = 'LoadingError'
+LoadingManagerView.LoadingOK = 'LoadingOK'
+
+LoadingManagerView.propTypes = {
+    onFetchData: PropTypes.func,
+    status: PropTypes.oneOf([LoadingManagerView.Loading, LoadingManagerView.LoadingError, LoadingManagerView.LoadingOK]).isRequired,
+    containerStyle: PropTypes.object
+
+}
 export default LoadingManagerView

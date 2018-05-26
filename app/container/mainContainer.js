@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import ScrollableTabView from "react-native-scrollable-tab-view";
 import TabBar from "../component/tabBar";
+import PicContainer from "./picContainer";
 
 
 const styles = StyleSheet.create(
@@ -45,7 +46,11 @@ class MainContainer extends React.Component {
                     return <TabBar tabBarSources={TAB_BAR_RESO}/>
                 }
                 }>
-
+                <PicContainer style={styles.subView}/>
+                <PicContainer style={styles.subView}/>
+                <PicContainer style={styles.subView}/>
+                <PicContainer style={styles.subView}/>
+                <PicContainer style={styles.subView}/>
 
             </ScrollableTabView>)
     }

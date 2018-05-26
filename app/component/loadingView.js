@@ -6,11 +6,9 @@
 
 import React from "react";
 import PropTypes from 'prop-types'
-import {Text, View} from "react-native";
+import {Text, View,StyleSheet} from "react-native";
 
-LoadingView.propTypes = {
-    containerStyle: PropTypes.object
-}
+
 
 const styles = StyleSheet.create({
     container: {
@@ -35,10 +33,13 @@ class LoadingView extends React.Component {
     render() {
         return (
             <View style={[styles.container, this.props.containerStyle]}>
-                <Text style={styles.text}>加载中...</>
+                <Text style={styles.text}>加载中...</Text>
             </View>
         )
     }
 }
 
+LoadingView.propTypes = {
+    containerStyle: PropTypes.object,
+};
 export default LoadingView

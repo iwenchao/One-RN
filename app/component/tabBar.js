@@ -34,7 +34,7 @@ class TabBar extends React.Component {
     // 构造
     constructor(props) {
         super(props);
-        if (props.tobBarResources.length !== props.tabs.length) {
+        if (props.tabBarResources.length !== props.tabs.length) {
             console.warn('scrollableTabView TabBar config error, please check resources')
         }
 
