@@ -44,7 +44,7 @@ const defaultAnalyse = response => {
         return response.data
     } else {
         console.warn(response.msg)
-        throw  response.msg
+        throw response.msg
     }
 }
 
@@ -89,5 +89,5 @@ const loggerWrap = requestInfo => fetchFunc => {
     return fetchFunc()
 }
 
-const  getFetchFromCache = get(true)
-const  getFetchNeverCached = get(false)
+const getFetchFromCache = get(true)
+const getFetchNeverCached = get(false)
