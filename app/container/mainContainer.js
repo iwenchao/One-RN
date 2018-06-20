@@ -50,7 +50,6 @@ class MainContainer extends React.Component {
                 <PicContainer style={styles.subView}/>
                 <PicContainer style={styles.subView}/>
                 <PicContainer style={styles.subView}/>
-                <PicContainer style={styles.subView}/>
 
             </ScrollableTabView>)
     }

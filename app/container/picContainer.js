@@ -12,7 +12,6 @@ import Toast from '../utils/toast.android'
 import appearTime from "../constants/appearTime";
 import LoadingManagerView from '../component/loadingManagerView'
 import {getLastestPictureList} from "../api/pictureApi";
-import ViewPager from "react-native-viewpager";
 import React from "react";
 
 class PicContainer extends BaseComponent {
